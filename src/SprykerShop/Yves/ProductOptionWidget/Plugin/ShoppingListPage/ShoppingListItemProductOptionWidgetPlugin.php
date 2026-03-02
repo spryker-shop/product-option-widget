@@ -18,11 +18,6 @@ use SprykerShop\Yves\ShoppingListPage\Dependency\Plugin\ProductOptionWidget\Shop
  */
 class ShoppingListItemProductOptionWidgetPlugin extends AbstractWidgetPlugin implements ShoppingListItemProductOptionWidgetPluginInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemTransfer $shoppingListItemTransfer
-     *
-     * @return void
-     */
     public function initialize(ShoppingListItemTransfer $shoppingListItemTransfer): void
     {
         $this->addParameter(

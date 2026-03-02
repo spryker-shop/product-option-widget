@@ -65,9 +65,6 @@ class ShoppingListItemProductOptionForm extends AbstractType
         $view->vars['template_path'] = $this->getTemplatePath();
     }
 
-    /**
-     * @return string
-     */
     public function getTemplatePath(): string
     {
         return static::TEMPLATE_PATH;
@@ -95,11 +92,6 @@ class ShoppingListItemProductOptionForm extends AbstractType
         });
     }
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setRequired(static::PRODUCT_OPTION_GROUP_KEY);
@@ -109,11 +101,6 @@ class ShoppingListItemProductOptionForm extends AbstractType
         ]);
     }
 
-    /**
-     * @param string $name
-     *
-     * @return string
-     */
     protected function generateFormTypeName(string $name): string
     {
         foreach (static::PROHIBITED_SYMBOLS as $prohibitedSymbol) {

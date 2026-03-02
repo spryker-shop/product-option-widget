@@ -17,25 +17,16 @@ use Spryker\Yves\Kernel\Widget\AbstractWidget;
  */
 class ProductOptionConfiguratorWidget extends AbstractWidget
 {
-    /**
-     * @param \Generated\Shared\Transfer\ProductViewTransfer $productViewTransfer
-     */
     public function __construct(ProductViewTransfer $productViewTransfer)
     {
         $this->addParameter('productOptionGroups', $this->getProductOptionGroups($productViewTransfer));
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'ProductOptionConfiguratorWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@ProductOptionWidget/views/option-configurator/option-configurator.twig';
@@ -56,11 +47,6 @@ class ProductOptionConfiguratorWidget extends AbstractWidget
         return $productAbstractOptionStorageTransfer->getProductOptionGroups();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductViewTransfer $productViewTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductAbstractOptionStorageTransfer|null
-     */
     protected function getStorageProductOptionGroupCollectionTransfer(ProductViewTransfer $productViewTransfer): ?ProductAbstractOptionStorageTransfer
     {
         return $this->getFactory()

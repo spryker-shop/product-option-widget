@@ -18,9 +18,6 @@ use SprykerShop\Yves\ProductOptionWidget\Mapper\ShoppingListTransferMapperInterf
 
 class ProductOptionWidgetFactory extends AbstractFactory
 {
-    /**
-     * @return \SprykerShop\Yves\ProductOptionWidget\Form\DataProvider\ShoppingListItemProductOptionFormDataProviderInterface
-     */
     public function createShoppingListItemProductOptionFormDataProvider(): ShoppingListItemProductOptionFormDataProviderInterface
     {
         return new ShoppingListItemProductOptionFormDataProvider(
@@ -29,25 +26,16 @@ class ProductOptionWidgetFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \SprykerShop\Yves\ProductOptionWidget\Mapper\ShoppingListTransferMapperInterface
-     */
     public function createShoppingListTransferMapper(): ShoppingListTransferMapperInterface
     {
         return new ShoppingListTransferMapper();
     }
 
-    /**
-     * @return \SprykerShop\Yves\ProductOptionWidget\Mapper\ProductAbstractOptionStorageMapperInterface
-     */
     public function createProductAbstractOptionStorageMapper(): ProductAbstractOptionStorageMapperInterface
     {
         return new ProductAbstractOptionStorageMapper();
     }
 
-    /**
-     * @return \SprykerShop\Yves\ProductOptionWidget\Dependency\Client\ProductOptionWidgetToProductOptionStorageClientInterface
-     */
     public function getProductOptionStorageClient(): ProductOptionWidgetToProductOptionStorageClientInterface
     {
         return $this->getProvidedDependency(ProductOptionWidgetDependencyProvider::CLIENT_PRODUCT_OPTION_STORAGE);

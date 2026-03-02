@@ -24,10 +24,6 @@ class ShoppingListItemProductOptionFormDataProvider implements ShoppingListItemP
      */
     protected $productAbstractOptionStorageMapper;
 
-    /**
-     * @param \SprykerShop\Yves\ProductOptionWidget\Dependency\Client\ProductOptionWidgetToProductOptionStorageClientInterface $productOptionStorageClient
-     * @param \SprykerShop\Yves\ProductOptionWidget\Mapper\ProductAbstractOptionStorageMapperInterface $productAbstractOptionStorageMapper
-     */
     public function __construct(
         ProductOptionWidgetToProductOptionStorageClientInterface $productOptionStorageClient,
         ProductAbstractOptionStorageMapperInterface $productAbstractOptionStorageMapper

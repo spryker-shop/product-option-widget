@@ -42,12 +42,6 @@ class ShoppingListTransferMapper implements ShoppingListTransferMapperInterface
         return $shoppingListTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     * @param array $requestFormData
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListTransfer
-     */
     protected function populateProductOptions(ShoppingListTransfer $shoppingListTransfer, array $requestFormData): ShoppingListTransfer
     {
         $shoppingListItems = [];
@@ -79,12 +73,6 @@ class ShoppingListTransferMapper implements ShoppingListTransferMapperInterface
         return array_filter($requestFormData[ShoppingListTransfer::ITEMS][$itemKey][static::PRODUCT_OPTIONS_FIELD_NAME]);
     }
 
-    /**
-     * @param array $requestFormData
-     * @param string $itemKey
-     *
-     * @return bool
-     */
     protected function hasProductOptions(array $requestFormData, string $itemKey): bool
     {
         return !empty($requestFormData[ShoppingListTransfer::ITEMS][$itemKey][static::PRODUCT_OPTIONS_FIELD_NAME]);
@@ -123,11 +111,6 @@ class ShoppingListTransferMapper implements ShoppingListTransferMapperInterface
         return new ArrayObject($productOptionTransfers);
     }
 
-    /**
-     * @param int $idProductOptionValue
-     *
-     * @return \Generated\Shared\Transfer\ProductOptionTransfer
-     */
     protected function createProductOptionTransfer(int $idProductOptionValue): ProductOptionTransfer
     {
         return (new ProductOptionTransfer())->setIdProductOptionValue($idProductOptionValue);
