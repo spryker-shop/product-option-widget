@@ -19,6 +19,11 @@ use SprykerShop\Yves\ProductOptionWidget\Widget\ProductOptionConfiguratorWidget;
  */
 class ProductOptionWidgetPlugin extends AbstractWidgetPlugin implements ProductOptionWidgetPluginInterface
 {
+    /**
+     * {@inheritDoc}
+     *
+     * @api
+     */
     public function initialize(ProductViewTransfer $productViewTransfer): void
     {
         $widget = new ProductOptionConfiguratorWidget($productViewTransfer);
@@ -26,11 +31,21 @@ class ProductOptionWidgetPlugin extends AbstractWidgetPlugin implements ProductO
         $this->parameters = $widget->getParameters();
     }
 
+    /**
+     * {@inheritDoc}
+     *
+     * @api
+     */
     public static function getName(): string
     {
         return static::NAME;
     }
 
+    /**
+     * {@inheritDoc}
+     *
+     * @api
+     */
     public static function getTemplate(): string
     {
         return ProductOptionConfiguratorWidget::getTemplate();

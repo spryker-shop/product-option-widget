@@ -16,16 +16,31 @@ use SprykerShop\Yves\CartPage\Dependency\Plugin\ProductOptionWidget\CartItemProd
  */
 class CartItemProductOptionWidgetPlugin extends AbstractWidgetPlugin implements CartItemProductOptionWidgetPluginInterface
 {
+    /**
+     * {@inheritDoc}
+     *
+     * @api
+     */
     public function initialize(ItemTransfer $itemTransfer): void
     {
         $this->addParameter('cartItem', $itemTransfer);
     }
 
+    /**
+     * {@inheritDoc}
+     *
+     * @api
+     */
     public static function getName(): string
     {
         return static::NAME;
     }
 
+    /**
+     * {@inheritDoc}
+     *
+     * @api
+     */
     public static function getTemplate(): string
     {
         return '@ProductOptionWidget/views/option-display/option-display.twig';
