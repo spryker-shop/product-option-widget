@@ -1,11 +1,18 @@
-$shopping-list-product-option-list-padding: map-get($setting-spacing, 'small');
+@use 'sass:meta';
+@use 'sass:map';
+
+$shopping-list-product-option-list-padding: map.get($setting-spacing, 'small');
 
 @mixin product-option-widget-shopping-list-product-option-list($name: '.shopping-list-product-option-list') {
     #{$name} {
         margin: 0 (-$shopping-list-product-option-list-padding);
 
+        @if meta.mixin-exists(product-option-widget-shopping-list-product-option-list-base-hook) {
+            @include product-option-widget-shopping-list-product-option-list-base-hook;
+        }
+
         &__item {
-            padding: 0 $shopping-list-product-option-list-padding map-get($setting-spacing, 'default');
+            padding: 0 $shopping-list-product-option-list-padding map.get($setting-spacing, 'default');
             flex-basis: 0;
         }
 
@@ -20,6 +27,10 @@ $shopping-list-product-option-list-padding: map-get($setting-spacing, 'small');
     @include product-option-widget-shopping-list-product-option-list();
 
     #{$name} {
+        @if meta.mixin-exists(shopping-list-product-option-list-base-hook) {
+            @include shopping-list-product-option-list-base-hook;
+        }
+
         @content;
     }
 }
